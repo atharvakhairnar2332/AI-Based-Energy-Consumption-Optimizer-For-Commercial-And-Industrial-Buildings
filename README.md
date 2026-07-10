@@ -128,26 +128,6 @@ Based on these inputs, the agent determines the optimal fan state to maximize en
 - CSS3
 - JavaScript
 
----
-
-# Project Structure
-
-```
-AI-Based-Energy-Consumption-Optimizer/
-
-│
-├── backend/
-├── frontend/
-├── datasets/
-├── docs/
-├── screenshots/
-├── README.md
-├── LICENSE
-└── .gitignore
-```
-
-
-
 # Screenshots
 
 ### Home Page
