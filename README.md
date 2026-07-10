@@ -12,7 +12,6 @@ Buildings consume a significant amount of energy through ventilation and cooling
 
 This project presents an AI-based solution that predicts future environmental conditions using historical sensor data through an LSTM model and determines the optimal fan operation using a PPO reinforcement learning agent. The system aims to reduce unnecessary energy consumption while maintaining occupant comfort through predictive and adaptive decision-making.
 
----
 
 # Key Features
 
@@ -25,7 +24,7 @@ This project presents an AI-based solution that predicts future environmental co
 - Responsive web-based interface
 - Downloadable sample datasets for testing
 
----
+
 
 # System Architecture
 
@@ -54,7 +53,7 @@ Optimal Fan Control Decision
 Energy Optimization Report
 ```
 
----
+
 
 # Workflow
 
@@ -66,7 +65,7 @@ Energy Optimization Report
 6. Generate the optimal fan control decision.
 7. Display the complete environmental analysis and recommendation.
 
----
+
 
 # Artificial Intelligence Models
 
@@ -90,7 +89,7 @@ The LSTM model predicts future environmental conditions using the previous 24 hi
 - Outdoor Temperature
 - Outdoor Humidity
 
----
+
 
 ## PPO Reinforcement Learning Agent
 
@@ -104,7 +103,7 @@ The PPO agent receives:
 
 Based on these inputs, the agent determines the optimal fan state to maximize energy efficiency while maintaining occupant comfort.
 
----
+
 
 # Technology Stack
 
@@ -147,7 +146,7 @@ AI-Based-Energy-Consumption-Optimizer/
 └── .gitignore
 ```
 
----
+
 
 # Screenshots
 
@@ -175,19 +174,19 @@ AI-Based-Energy-Consumption-Optimizer/
 
 </p>
 
----
+
 
 # Architecture Diagram
 
 *(Insert Architecture Diagram)*
 
----
+
 
 # Workflow Diagram
 
 *(Insert Workflow Diagram)*
 
----
+
 
 # Sample Datasets
 
@@ -222,7 +221,6 @@ The complete research paper associated with this project is available in:
 Publication is in Process!!
 ```
 
----
 
 # Conference Presentation Certificate
 
@@ -230,7 +228,7 @@ The project certificate is available in:
 
 [Project Certificate](AI-Based-Energy-Consumption-Optimizer/docs/632_Atharva%20Khairnar_certificate.pdf)
 
----
+
 
 # Future Scope
 
@@ -243,7 +241,7 @@ The project certificate is available in:
 - Explainable AI
 - Digital Twin implementation
 
----
+
 # License
 
 This project is released under the MIT License.
