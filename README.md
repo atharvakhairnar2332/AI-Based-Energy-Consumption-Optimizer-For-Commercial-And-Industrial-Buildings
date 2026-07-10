@@ -103,8 +103,6 @@ The PPO agent receives:
 
 Based on these inputs, the agent determines the optimal fan state to maximize energy efficiency while maintaining occupant comfort.
 
-
-
 # Technology Stack
 
 ## Artificial Intelligence
