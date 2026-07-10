@@ -5,7 +5,6 @@ AI-powered energy optimization system that combines LSTM-based environmental for
 
 An intelligent energy optimization system that combines LSTM-based environmental forecasting with Proximal Policy Optimization (PPO) Reinforcement Learning to make predictive and energy-efficient fan control decisions for industrial and commercial buildings.
 
----
 
 # Overview
 
