@@ -218,7 +218,7 @@ Publication is in Process!!
 The project certificate is available in:
 
 ```
-[Project Certificate](docs/632_Atharva Khairnar_certificate.pdf)
+[Project Certificate](AI-Based-Energy-Consumption-Optimizer/docs/632_Atharva%20Khairnar_certificate.pdf)
 ```
 
 ---
