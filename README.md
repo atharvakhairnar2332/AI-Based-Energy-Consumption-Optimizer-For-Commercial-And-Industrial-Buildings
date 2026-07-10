@@ -188,7 +188,11 @@ AI-Based-Energy-Consumption-Optimizer/
 
 # Workflow Diagram
 
-*(Insert Workflow Diagram)*
+<p align="center">
+
+  <img src="AI-Based-Energy-Consumption-Optimizer/docs/energy_optimizer_workflow.png" width="90%">
+
+</p>
 
 
 
