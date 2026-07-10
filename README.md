@@ -170,7 +170,11 @@ AI-Based-Energy-Consumption-Optimizer/
 
 ### Energy Optimization Report
 
-*(Insert Screenshot)*
+<p align="center">
+
+  <img src="AI-Based-Energy-Consumption-Optimizer/docs/Project-Pics/Report Page.png" width="90%">
+
+</p>
 
 ---
 
