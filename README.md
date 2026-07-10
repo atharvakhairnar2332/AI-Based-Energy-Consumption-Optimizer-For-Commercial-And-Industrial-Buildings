@@ -180,7 +180,7 @@ AI-Based-Energy-Consumption-Optimizer/
 
 <p align="center">
 
-  <img src="AI-Based-Energy-Consumption-Optimizer/docs/Project-Pics/energy_optimizer_architecture.png" width="90%">
+  <img src="AI-Based-Energy-Consumption-Optimizer/docs/energy_optimizer_architecture.png" width="90%">
 
 </p>
 
