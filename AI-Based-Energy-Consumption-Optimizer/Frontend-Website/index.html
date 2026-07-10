@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+
+.analyzing {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.analyzing::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -120%;
+
+    width: 60%;
+
+    height: 100%;
+
+    background: linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.55),
+
+        transparent
+
+    );
+
+    animation: shimmer 1.3s infinite;
+
+}
+
+@keyframes shimmer {
+
+    from {
+
+        left: -120%;
+
+    }
+
+    to {
+
+        left: 120%;
+
+    }
+
+}
+
+.info-tooltip{
+    position:relative;
+    display:inline-block;
+    margin-left:8px;
+    margin-top: 25px;
+    margin-bottom: -5px;
+    cursor:help;
+    color:#2563EB;
+    font-size:15px;
+    font-weight:700;
+}
+
+.tooltip-text{
+    visibility:hidden;
+    opacity:0;
+
+    position:absolute;
+    left:22px;
+    top:-10px;
+
+    width:340px;
+
+    background:#111827;
+    color:#fff;
+
+    padding:12px 14px;
+
+    border-radius:8px;
+
+    font-size:13px;
+    font-weight:400;
+    line-height:1.5;
+
+    transition:.25s;
+
+    z-index:100;
+}
+
+.info-tooltip:hover .tooltip-text{
+    visibility:visible;
+    opacity:1;
+}
+
+</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Based Energy Consumption Optimizer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============================= -->
+  <!-- NAVIGATION BAR                -->
+  <!-- ============================= -->
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a href="#home" class="navbar__brand">
+        <span class="navbar__logo" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="navbar__title">Energy&nbsp;Optimizer<span class="navbar__title-accent">.AI</span></span>
+      </a>
+      <nav class="navbar__links" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================= -->
+    <!-- HERO SECTION                  -->
+    <!-- ============================= -->
+    <section id="home" class="hero">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow">Predictive &amp; Reinforcement Learning · Proof of Concept</p>
+          <h1 class="hero__title">AI-Based Energy Consumption Optimizer</h1>
+          <p class="hero__subtitle">
+            Predict future environmental conditions using Deep Learning and intelligently
+            optimize energy consumption using Reinforcement Learning.
+          </p>
+          <p class="hero__paragraph">
+            This system forecasts indoor and outdoor environmental conditions with an
+            LSTM neural network, then uses a PPO reinforcement learning agent to decide
+            whether a fan should be switched ON or OFF &mdash; balancing energy efficiency
+            with occupant comfort in real time.
+          </p>
+          <div class="hero__actions">
+            <a href="#analyze" class="btn btn--primary">Analyze Dataset</a>
+            <a href="#about" class="btn btn--secondary">Learn More</a>
+          </div>
+        </div>
+        <div class="hero__illustration" aria-hidden="true">
+          <svg viewBox="0 0 420 420" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="210" cy="210" r="190" fill="#EFF4FF"/>
+            <circle cx="210" cy="210" r="140" fill="#E1EAFE"/>
+            <g stroke="#2563EB" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M120 260 L120 190 L180 190 L180 150 L240 150 L240 210 L300 210 L300 260" />
+              <circle cx="120" cy="260" r="8" fill="#2563EB" stroke="none"/>
+              <circle cx="180" cy="150" r="8" fill="#2563EB" stroke="none"/>
+              <circle cx="300" cy="260" r="8" fill="#22C55E" stroke="none"/>
+            </g>
+            <g transform="translate(210 210)">
+              <circle r="46" fill="#FFFFFF" stroke="#2563EB" stroke-width="3"/>
+              <g stroke="#2563EB" stroke-width="6" stroke-linecap="round">
+                <line x1="0" y1="0" x2="0" y2="-30"/>
+                <line x1="0" y1="0" x2="26" y2="15"/>
+                <line x1="0" y1="0" x2="-26" y2="15"/>
+              </g>
+              <circle r="5" fill="#2563EB"/>
+            </g>
+            <g fill="#22C55E">
+              <circle cx="330" cy="120" r="5"/>
+              <circle cx="90" cy="330" r="5"/>
+              <circle cx="350" cy="300" r="5"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- FEATURE SECTION               -->
+    <!-- ============================= -->
+    <section class="features" aria-label="Key features">
+      <div class="section-inner">
+        <div class="features__grid">
+
+          <article class="card feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 17l5-6 4 4 6-8" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 7h4v4" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>LSTM Prediction</h3>
+            <p>Forecast future indoor and outdoor environmental conditions from historical sensor data.</p>
+          </article>
+
+          <article class="card feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#2563EB" stroke-width="2"/><path d="M12 7v5l3 3" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>PPO Decision Making</h3>
+            <p>Optimizes fan operation while balancing energy efficiency and thermal comfort.</p>
+          </article>
+
+          <article class="card feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="4" width="16" height="16" rx="3" stroke="#2563EB" stroke-width="2"/></svg>
+            </div>
+            <h3>Dataset Validation</h3>
+            <p>Automatically validates uploaded datasets before analysis.</p>
+          </article>
+
+          <article class="card feature-card">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="#2563EB" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Real-Time Recommendations</h3>
+            <p>Provides intelligent fan control recommendations.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- DATASET REQUIREMENTS SECTION  -->
+    <!-- ============================= -->
+    <section class="dataset-req" aria-label="Dataset requirements">
+      <div class="section-inner">
+        <div class="card dataset-req__card">
+          <h2 class="section-title">Dataset Requirements</h2>
+          <p class="section-lead">Make sure your dataset meets the following requirements before uploading.</p>
+
+          <div class="dataset-req__grid">
+            <div class="dataset-req__block">
+              <h4>Supported File Formats</h4>
+              <ul class="tag-list">
+                <li>CSV (.csv)</li>
+                <li>Excel (.xlsx)</li>
+              </ul>
+            </div>
+
+            <div class="dataset-req__block">
+              <h4>Required Measurements</h4>
+              <ul class="check-list">
+                <li>Indoor Temperature</li>
+                <li>Indoor Humidity</li>
+                <li>Outdoor Temperature</li>
+                <li>Outdoor Humidity</li>
+                <li>Outdoor Wind Speed</li>
+                <li>Occupancy</li>
+              </ul>
+            </div>
+
+            <div class="dataset-req__block">
+              <h4>Minimum Records</h4>
+              <p class="dataset-req__stat">24 <span>historical rows</span></p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#2563EB" stroke-width="2"/><path d="M12 8h.01M11 12h1v5h1" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/></svg>
+            <p>This prototype currently supports fan energy optimization datasets.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- ANALYSIS SECTION              -->
+    <!-- ============================= -->
+    <section id="analyze" class="analysis" aria-label="Dataset analysis">
+      <div class="section-inner">
+
+    <div id="analysis-ui">
+
+        <h2 class="section-title">Run an Analysis</h2>
+
+        <p class="section-lead">
+            Upload your dataset, select the current occupancy state, and generate a fan optimization report.
+        </p>
+
+        <div class="card analysis__card">
+
+          <!-- Upload -->
+          <div class="upload-area">
+            <div class="upload-area__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 16V4M12 4l-4 4M12 4l4 4" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p class="upload-area__title">Drag &amp; drop your dataset here</p>
+            <p class="upload-area__subtitle">Supported formats: CSV, XLSX &middot; Minimum 24 rows</p>
+            <input
+    type="file"
+    id="dataset-file"
+    accept=".csv,.xlsx"
+    hidden
+>
+
+<button
+    type="button"
+    id="browse-btn"
+    class="btn btn--primary btn--small"
+>
+    Browse File
+</button>
+
+<p id="selected-file" class="upload-area__subtitle">
+    No file selected
+</p>
+<div
+    style="
+        margin-top:18px;
+        text-align:center;
+    ">
+
+    <p
+        style="
+            margin:0;
+            font-size:14px;
+            color:#6B7280;
+        ">
+
+        Don't have a compatible dataset?
+
+    </p>
+
+    <button
+        type="button"
+        id="download-dataset-btn"
+        style="
+            margin-top:8px;
+            background:none;
+            border:none;
+            color:#2563EB;
+            font-size:14px;
+            font-weight:600;
+            cursor:pointer;
+            display:inline-flex;
+            align-items:center;
+            gap:6px;
+        ">
+
+        ⤵ Download Sample Datasets
+
+    </button>
+
+</div>
+          </div>
+
+          <!-- Occupancy selection -->
+           <!-- Error Message -->
+
+<div
+    id="error-box"
+    style="
+        display:none;
+        align-items:flex-start;
+        gap:12px;
+        padding:12px 16px;
+        margin:18px 0;
+        border-radius:8px;
+        background:#FEF2F2;
+        border-left:4px solid #DC2626;
+    ">
+
+    <div
+        style="
+            font-size:18px;
+            line-height:1;
+        ">
+        
+    </div>
+
+    <div style="flex:1;">
+
+        <div
+            id="error-title"
+            style="
+                font-size:15px;
+                font-weight:600;
+                color:#991B1B;
+                margin-bottom:4px;
+            ">
+            Dataset Validation Error
+        </div>
+
+        <div
+            id="error-message"
+            style="
+                font-size:14px;
+                color:#7F1D1D;
+                line-height:1.5;
+                white-space:pre-line;
+            ">
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Occupancy selection -->
+
+<fieldset class="occupancy">
+  
+            <legend>
+
+    Current Occupancy
+
+    <span
+        class="info-tooltip">
+
+        <svg
+    class="info-icon"
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    aria-hidden="true">
+
+    <circle
+        cx="12"
+        cy="12"
+        r="9"
+        stroke="#2563EB"
+        stroke-width="2"/>
+
+    <path
+        d="M12 11v5"
+        stroke="#2563EB"
+        stroke-width="2"
+        stroke-linecap="round"/>
+
+    <circle
+        cx="12"
+        cy="7.5"
+        r="1"
+        fill="#2563EB"/>
+
+</svg>
+
+        <span class="tooltip-text">
+
+            In a real-world deployment, occupancy would be detected automatically using motion or presence sensors. Historical environmental data would be continuously collected, ensuring the latest 24 records are always available for LSTM forecasting. Manual occupancy selection is included only for demonstration purposes.
+
+        </span>
+
+    </span>
+
+</legend>
+            <label class="radio-option">
+              <input type="radio" name="occupancy" value="occupied" checked />
+              <span class="radio-option__control" aria-hidden="true"></span>
+              <span class="radio-option__label">Occupied</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="occupancy" value="unoccupied" />
+              <span class="radio-option__control" aria-hidden="true"></span>
+              <span class="radio-option__label">Unoccupied</span>
+            </label>
+          </fieldset>
+
+          
+
+          <!-- Loading placeholder (hidden by default) -->
+          <div class="loading-state" hidden>
+            <div class="loading-state__spinner" aria-hidden="true"></div>
+            <p class="loading-state__step">Analyzing dataset</p>
+            <p class="loading-state__step">Predicting future environmental conditions</p>
+            <p class="loading-state__step">Optimizing fan decision</p>
+          </div>
+
+        </div>
+
+</div>
+
+<div
+    id="processing-section"
+    hidden
+    style="
+        text-align:center;
+        padding:40px 20px;
+    ">
+
+    <h2
+        style="
+            color:#2563EB;
+            margin-bottom:30px;
+        ">
+
+        Hold on we're working on it 
+
+
+    </h2>
+
+   <div
+    id="pipeline-container"
+    style="
+        max-width:700px;
+        margin:auto;
+        min-height:70px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    ">
+
+    <div
+    id="processing-container"
+    style="
+        position:relative;
+        height:40px;
+        width:100%;
+        overflow:hidden;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    ">
+
+    <div
+        id="processing-message"
+        style="
+            position:absolute;
+            font-size:18px;
+            font-weight:500;
+            color:rgba(31,41,55,.85);
+            text-align:center;
+            letter-spacing:.2px;
+            line-height:1.6;
+            font-family:Inter,sans-serif;
+            transition:
+                transform .45s ease,
+                opacity .45s ease;
+        ">
+
+        Preparing AI Pipeline...
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div style="text-align:center; margin-top:30px;">
+
+    <button
+        type="button"
+        id="analyze-btn"
+        class="btn btn--primary btn--large"
+        style="
+            width:auto;
+            min-width:540px;
+        ">
+
+        Analyze Dataset
+
+    </button>
+
+</div>
+</section>
+
+    <!-- ============================= -->
+    <!-- RESULTS SECTION (hidden)      -->
+    <!-- ============================= -->
+    <section
+    id="results-section"
+    class="results"
+    hidden
+    style="
+        opacity:0;
+        transition:opacity .6s ease;
+    ">
+      <div class="section-inner">
+        <h2 class="section-title">Energy Optimization Report</h2>
+<p
+    style="
+        text-align:center;
+        font-size:15px;
+        color:#6B7280;
+        margin:12px 0 30px 0;
+        line-height:1.6;
+        max-width:760px;
+        margin-left:auto;
+        margin-right:auto;
+    ">
+
+    The following environmental conditions are forecasted by the LSTM model using the previous <strong>24 historical records</strong> from the uploaded dataset. These predicted conditions are subsequently used by the PPO agent to determine the optimal fan control decision.
+
+</p>
+        <div class="results__predictions">
+          <div class="card metric-card">
+            <div class="metric-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3a2 2 0 00-2 2v9.17a4 4 0 102 0V5a2 2 0 00-2-2z" stroke="#2563EB" stroke-width="2"/></svg>
+            </div>
+            <p class="metric-card__label">Indoor Temperature</p>
+            <p id="indoor-temp" class="metric-card__value">--</p>
+          </div>
+
+          <div class="card metric-card">
+            <div class="metric-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3s6 7 6 11a6 6 0 11-12 0c0-4 6-11 6-11z" stroke="#2563EB" stroke-width="2"/></svg>
+            </div>
+            <p class="metric-card__label">Indoor Humidity</p>
+            <p id="indoor-humidity" class="metric-card__value">--</p>
+          </div>
+
+          <div class="card metric-card">
+            <div class="metric-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="#2563EB" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <p class="metric-card__label">Outdoor Temperature</p>
+            <p id="outdoor-temp" class="metric-card__value">--</p>
+          </div>
+
+          <div class="card metric-card">
+            <div class="metric-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 8h10a3 3 0 100-3M3 16h14a3 3 0 110 3M3 12h7" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <p class="metric-card__label">Outdoor Humidity</p>
+            <p id="outdoor-humidity" class="metric-card__value">--</p>
+          </div>
+        </div>
+
+        <div class="results__grid">
+          <div class="card analysis-card">
+            <h3>Environmental Analysis</h3>
+            <ul
+    id="analysis-list"
+    class="bullet-list">
+              <li>Placeholder observation about indoor conditions.</li>
+              <li>Placeholder observation about outdoor conditions.</li>
+              <li>Placeholder observation about comfort thresholds.</li>
+              <li>Placeholder observation about trend direction.</li>
+            </ul>
+          </div>
+
+          <div class="card recommendation-card">
+            <h3>Recommendation</h3>
+            <div class="recommendation-card__status">
+              <div
+    id="status-circle"
+    class="status-indicator"
+    aria-hidden="true">
+                <span
+    id="status-indicator"
+    class="status-indicator__text">
+    --
+</span>
+              </div>
+              <div>
+                <p class="recommendation-card__label">Fan Status</p>
+                <p
+    id="fan-status"
+    class="recommendation-card__value">
+    Awaiting analysis
+</p>
+              </div>
+            </div>
+            <p
+    id="recommendation-text"
+    class="recommendation-card__text">
+              Recommendation details will appear here once a dataset has been analyzed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- ABOUT SECTION                 -->
+    <!-- ============================= -->
+    <section id="about" class="about">
+      <div class="section-inner">
+        <h2 class="section-title">About the Project</h2>
+
+        <div class="about__grid">
+          <div class="card about__block">
+            <h3>Problem Statement</h3>
+            <p>
+              Buildings often operate ventilation and cooling equipment basically any energy consumption equipment, people use fixed thresholds or manual control, which fails to adapt to changing environmental conditions and occupancy. This results in unnecessary energy consumption and reduced operational efficiency. Our system predicts future environmental conditions using historical sensor data and intelligently optimizes fan operation through reinforcement learning to improve energy efficiency while maintaining occupant comfort.
+            </p>
+          </div>
+
+          <div class="card about__block">
+            <h3>Solution</h3>
+            <p>
+              This system combines predictive deep learning with reinforcement learning to
+              make forward-looking, comfort-aware control decisions. Instead of reacting to
+              the present moment alone, it forecasts what conditions are about to become and
+              acts accordingly.
+            </p>
+          </div>
+        </div>
+
+        <div id="how-it-works" class="architecture">
+          <h3 class="architecture__title">System Architecture</h3>
+          <div class="architecture__flow">
+            <div class="architecture__step">Historical Sensor Data</div>
+            <div class="architecture__arrow" aria-hidden="true">↓</div>
+            <div class="architecture__step">LSTM Forecasting</div>
+            <div class="architecture__arrow" aria-hidden="true">↓</div>
+            <div class="architecture__step">Predicted Environment</div>
+            <div class="architecture__arrow" aria-hidden="true">↓</div>
+            <div class="architecture__step">PPO Reinforcement Learning Agent</div>
+            <div class="architecture__arrow" aria-hidden="true">↓</div>
+            <div class="architecture__step architecture__step--final">Fan Recommendation</div>
+          </div>
+        </div>
+
+        <div class="about__grid">
+          <div class="card about__block">
+            <h3>LSTM &mdash; Forecasting Model</h3>
+            <p>
+              A Long Short-Term Memory neural network is trained on historical sensor
+              readings to predict future indoor and outdoor temperature, humidity, and
+              related environmental measurements.
+            </p>
+          </div>
+
+          <div class="card about__block">
+            <h3>PPO &mdash; Decision Model</h3>
+            <p>
+              A Proximal Policy Optimization reinforcement learning agent takes the
+              predicted environmental state as input and determines the optimal fan
+              operation to balance energy efficiency with occupant comfort.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- FUTURE SCOPE SECTION          -->
+    <!-- ============================= -->
+    <section class="future-scope" aria-label="Future scope">
+      <div class="section-inner">
+        <h2 class="section-title">Future Scope</h2>
+        <p class="section-lead">The architecture is intentionally modular and extends beyond fan control.</p>
+
+        <div class="future-scope__grid">
+          <div class="card future-scope__item">
+            <h4>HVAC Optimization</h4>
+            <p>Extend the control policy to full heating, ventilation and air conditioning systems.</p>
+          </div>
+          <div class="card future-scope__item">
+            <h4>Industrial Equipment</h4>
+            <p>Apply the same framework to motors, pumps and other industrial machinery.</p>
+          </div>
+          <div class="card future-scope__item">
+            <h4>IoT Sensor Integration</h4>
+            <p>Ingest live readings directly from connected sensor networks.</p>
+          </div>
+          <div class="card future-scope__item">
+            <h4>Smart Buildings</h4>
+            <p>Coordinate multiple systems across a building for holistic energy management.</p>
+          </div>
+          <div class="card future-scope__item">
+            <h4>Renewable Energy Optimization</h4>
+            <p>Align consumption decisions with the availability of renewable energy sources.</p>
+          </div>
+          <div class="card future-scope__item">
+            <h4>Cloud Deployment</h4>
+            <p>Deploy the prediction and decision pipeline as a scalable cloud service.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- CONTACT SECTION               -->
+    <!-- ============================= -->
+    <section id="contact" class="contact">
+      <div class="section-inner">
+        <h2 class="section-title">Contact</h2>
+        <div class="card contact__card">
+          <div class="contact__avatar" aria-hidden="true">AK</div>
+          <div class="contact__details">
+            <h3>Atharva Khairnar</h3>
+            <ul class="contact__links">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h16v16H4V4z" stroke="#6B7280" stroke-width="2"/><path d="M4 6l8 7 8-7" stroke="#6B7280" stroke-width="2"/></svg>
+                <a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=atharvakhairnar2006@gmail.com"
+    style="
+        color:inherit;
+        text-decoration:none;
+    "
+    onmouseover="this.style.color='#2563EB'; this.style.textDecoration='underline';"
+    onmouseout="this.style.color='inherit'; this.style.textDecoration='none';">
+
+    atharvakhairnar2006@gmail.com
+
+</a>
+              </li>
+              <li>
+                <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    aria-hidden="true">
+
+    <path
+        d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.69c-2.78.61-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.5 9.5 0 0112 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.69-4.57 4.94.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"
+        fill="#6B7280"/>
+
+</svg>
+                <a
+    href="https://github.com/atharvakhairnar2332"
+    target="_blank"
+    rel="noopener noreferrer"
+    style="
+        color:inherit;
+        text-decoration:none;
+    "
+    onmouseover="this.style.color='#2563EB'; this.style.textDecoration='underline';"
+    onmouseout="this.style.color='inherit'; this.style.textDecoration='none';">
+
+    GitHub
+
+</a>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#6B7280" stroke-width="2"/><path d="M8 17V9M8 6v.01M12 17v-5a2 2 0 014 0v5M12 12v5" stroke="#6B7280" stroke-width="2" stroke-linecap="round"/></svg>
+                <a
+    href="https://www.linkedin.com/in/atharva-khairnar-081416382/?skipRedirect=true"
+    target="_blank"
+    rel="noopener noreferrer"
+    style="
+        color:inherit;
+        text-decoration:none;
+    "
+    onmouseover="this.style.color='#2563EB'; this.style.textDecoration='underline';"
+    onmouseout="this.style.color='inherit'; this.style.textDecoration='none';">
+
+    LinkedIn
+
+</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================= -->
+  <!-- FOOTER                        -->
+  <!-- ============================= -->
+  <footer class="footer">
+    <div class="section-inner">
+      <div class="footer__note">
+        <p><strong>Note:</strong></p>
+        <p>
+          This application demonstrates intelligent fan energy optimization using predictive
+          and reinforcement learning techniques.
+        </p>
+        <p>
+          The architecture is modular and can be adapted for HVAC systems, industrial
+          machinery, pumps and other energy-consuming equipment through appropriate
+          retraining and domain-specific datasets.
+        </p>
+      </div>
+    </div>
+    </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
