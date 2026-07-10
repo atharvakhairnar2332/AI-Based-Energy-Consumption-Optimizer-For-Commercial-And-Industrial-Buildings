@@ -156,8 +156,7 @@ AI-Based-Energy-Consumption-Optimizer/
 
 <p align="center">
 
-  <img src="AI-Based-Energy-Consumption-Optimizer/AI-Based-Energy-Consumption-Optimizer-For-Commercial-And-Industrial-Buildings
-/docs/Project-Pics/Home page.png" width="90%">
+  <img src="AI-Based-Energy-Consumption-Optimizer/docs/Project-Pics/Home page.png" width="90%">
 
 </p>
 
