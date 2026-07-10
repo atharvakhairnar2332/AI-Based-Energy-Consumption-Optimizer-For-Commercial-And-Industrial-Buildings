@@ -235,14 +235,6 @@ docs/Project_Certificate.pdf
 - Digital Twin implementation
 
 ---
-
-# Author
-
-Atharva Khairnar
-
-Bachelor of Technology (Information Technology)
-
----
 # License
 
 This project is released under the MIT License.
