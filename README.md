@@ -162,7 +162,11 @@ AI-Based-Energy-Consumption-Optimizer/
 
 ### Analysis Interface
 
-*(Insert Screenshot)*
+<p align="center">
+
+  <img src="AI-Based-Energy-Consumption-Optimizer/docs/Project-Pics/Analysis Page.png" width="90%">
+
+</p>
 
 ### Energy Optimization Report
 
