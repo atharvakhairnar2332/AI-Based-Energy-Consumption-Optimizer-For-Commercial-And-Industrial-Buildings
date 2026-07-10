@@ -154,7 +154,11 @@ AI-Based-Energy-Consumption-Optimizer/
 
 ### Home Page
 
-*(Insert Screenshot)*
+<p align="center">
+
+  <img src="AI-Based-Energy-Consumption-Optimizer/docs/Project-Pics/Home page.png" width="90%">
+
+</p>
 
 ### Analysis Interface
 
