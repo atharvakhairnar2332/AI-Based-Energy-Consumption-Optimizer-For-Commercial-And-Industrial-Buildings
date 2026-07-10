@@ -178,7 +178,11 @@ AI-Based-Energy-Consumption-Optimizer/
 
 # Architecture Diagram
 
-*(Insert Architecture Diagram)*
+<p align="center">
+
+  <img src="AI-Based-Energy-Consumption-Optimizer/docs/Project-Pics/energy_optimizer_architecture.png" width="90%">
+
+</p>
 
 
 
