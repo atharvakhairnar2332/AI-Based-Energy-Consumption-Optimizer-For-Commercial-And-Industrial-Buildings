@@ -218,7 +218,7 @@ Publication is in Process!!
 The project certificate is available in:
 
 ```
-docs/Project_Certificate.pdf
+[Project Certificate](docs/632_Atharva Khairnar_certificate.pdf)
 ```
 
 ---
