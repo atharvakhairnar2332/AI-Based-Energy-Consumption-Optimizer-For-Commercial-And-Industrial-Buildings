@@ -193,7 +193,7 @@ These include:
 Live Application
 
 ```
-Add deployment URL here
+In Process
 ```
 
 # Research Paper
