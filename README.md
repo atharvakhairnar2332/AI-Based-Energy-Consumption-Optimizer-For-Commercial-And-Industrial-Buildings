@@ -192,9 +192,8 @@ These include:
 
 Live Application
 
-```
-In Process
-```
+https://energyop-latest.onrender.com
+
 
 # Research Paper
 
