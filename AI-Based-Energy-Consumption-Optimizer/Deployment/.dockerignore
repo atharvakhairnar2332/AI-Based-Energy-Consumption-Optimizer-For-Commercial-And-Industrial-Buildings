@@ -1,0 +1,53 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Git
+.git
+.gitignore
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# TensorBoard
+runs/
+logs/
+
+# Build
+build/
+dist/
+
+# Tests
+tests/
+
+# Cache
+.cache/
+
+# Temporary files
+*.tmp
+*.bak
+
+# Python environment files
+.python-version
